@@ -104,13 +104,15 @@ module.exports = defineConfig({
     }
   },
   
-  // externalize src/vue3/*.ce.vue
+  // externalize src/vue3/*.register
   configureWebpack: {
     externals: {
       // TODO: read from src/vue3/*.ce.vue using fast-glob
-      '@/vue3/HelloVue3.ce.vue.register': `promise import("${VITE_BASE}src/vue3/HelloVue3.ce.vue.register.js")`
+      '@/vue3/HelloVue3.register': `promise import("${VITE_BASE}src/vue3/HelloVue3.register")`
     }
   },
+
+  // TODO: configure `ignoredElements` in Vue2
 
 
   // TODO: build-time plugin to call vite.

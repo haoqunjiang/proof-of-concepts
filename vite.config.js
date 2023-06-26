@@ -53,14 +53,14 @@ export default defineConfig({
     {
       name: 'auto-register-vue-custom-elements',
       resolveId(id) {
-        if (id.endsWith('.ce.vue.register.js')) {
+        if (id.includes('src/vue3/') && id.endsWith('.register')) {
           const shortId = id.replace(process.cwd(), '')
           return shortId
         }
       },
       load(id) {
-        if (id.endsWith('.ce.vue.register.js')) {
-          const componentId = id.replace(/\.register.js$/, '')
+        if (id.includes('src/vue3/') && id.endsWith('.register')) {
+          const componentId = id.replace(/\.register$/, '.ce.vue')
 
           const componentName = componentId.replace('.ce.vue', 'Ce').replace(/^.*\//, '')
           const ceName = fromPascalcaseToKebabcase(componentName)

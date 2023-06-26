@@ -1,7 +1,7 @@
 <script setup>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-import '@/vue3/HelloVue3.ce.vue.register'
+import '@/vue3/HelloVue3.register'
 
 import { version } from 'vue'
 const msg = `Hello Vue ${version}`

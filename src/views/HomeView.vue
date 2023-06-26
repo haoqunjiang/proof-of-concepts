@@ -12,6 +12,6 @@ const msg = `Hello Vue ${version}`
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld :msg="msg" />
 
-    <hello-vue3-ce />
+    <vue3-hello-vue3-ce />
   </div>
 </template>

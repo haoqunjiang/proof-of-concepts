@@ -112,8 +112,5 @@ module.exports = defineConfig({
     }
   },
 
-  // TODO: configure `ignoredElements` in Vue2
-
-
   // TODO: build-time plugin to call vite.
 })

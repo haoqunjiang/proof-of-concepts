@@ -44,8 +44,7 @@ export default defineConfig({
     vue({
       template: {
         compilerOptions: {
-          // TODO: automatically read from `src/vue3/` using fast-glob
-          isCustomElement: (tag) => tag.endsWith('-ce')
+          isCustomElement: (tag) => tag.startsWith('vue3-') && tag.endsWith('-ce')
         }
       }
     }),
@@ -63,7 +62,7 @@ export default defineConfig({
           const componentId = id.replace(/\.register$/, '.ce.vue')
 
           const componentName = componentId.replace('.ce.vue', 'Ce').replace(/^.*\//, '')
-          const ceName = fromPascalcaseToKebabcase(componentName)
+          const ceName = `vue3-` + fromPascalcaseToKebabcase(componentName)
 
           return `
 import { defineCustomElement } from 'vue'

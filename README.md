@@ -27,7 +27,7 @@ yarn lint
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### Vue 3 Support
+## Vue 3 Support
 
 - You can write Vue 3 code under the `src/vue3` directory
 - Vue 3 components can be exported as custom elements and used in the existing Vue 2 app. They rules are:
@@ -39,7 +39,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
   - The custom element name is `vue3-` + the kebab-case of the file name + `-ce`. That is, `HelloWorld.ce.vue` will be registered as the `<vue3-hello-world-ce />` custom element.
   - If the file is in a nested directory, the custom element name will be the kebab-case of the file path. That is, in `@/vue3/components/HelloWorld.ce.vue` will be registered as the `<vue3-components-hello-world-ce />` custom element.
 
-#### TODOs
+### TODOs
 
 - Build support
 - Peer dependency resolutions for Vue 3-only packages.

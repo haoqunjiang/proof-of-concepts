@@ -1,7 +1,14 @@
 const { defineConfig } = require('@vue/cli-service')
-
+const fg = require('fast-glob');
 
 const VITE_BASE = '/__vite/'
+
+const vue3Externals = fg.sync(['src/vue3/**/*.ce.vue']).reduce((acc, componentPath) => {
+  const registerPath = componentPath.replace(/\.ce\.vue$/, '.register')
+  const aliasedPath = registerPath.replace(/^src/, '@')
+  acc[aliasedPath] = `promise import("${VITE_BASE}${registerPath}")`
+  return acc
+}, {})
 
 // It's a CJS file so no top-level await
 // `setupMiddlewares` is sync
@@ -106,10 +113,7 @@ module.exports = defineConfig({
   
   // externalize src/vue3/*.register
   configureWebpack: {
-    externals: {
-      // TODO: read from src/vue3/*.ce.vue using fast-glob
-      '@/vue3/HelloVue3.register': `promise import("${VITE_BASE}src/vue3/HelloVue3.register")`
-    }
+    externals: vue3Externals
   },
 
   // TODO: build-time plugin to call vite.

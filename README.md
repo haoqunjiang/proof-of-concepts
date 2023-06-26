@@ -44,4 +44,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - Build support
 - Peer dependency resolutions for Vue 3-only packages.
   - Maybe we need a `package.json` in the `vue3` directory to fully resolve this issue? That would be a little bit hacky to me, but makes sense.
+- Test whether style injection works correctly in Vue 3 components.
 - ESLint rules to enforce the importing convention
+- A guide to re-setup the lint process without `@vue/cli-plugin-eslint`
+- TypeScript support

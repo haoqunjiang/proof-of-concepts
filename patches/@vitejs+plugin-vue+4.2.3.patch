@@ -1,0 +1,16 @@
+diff --git a/node_modules/@vitejs/plugin-vue/dist/index.cjs b/node_modules/@vitejs/plugin-vue/dist/index.cjs
+index aad651e..21f02c8 100644
+--- a/node_modules/@vitejs/plugin-vue/dist/index.cjs
++++ b/node_modules/@vitejs/plugin-vue/dist/index.cjs
+@@ -21,9 +21,9 @@ function resolveCompiler(root) {
+   return compiler;
+ }
+ function tryResolveCompiler(root) {
+-  const vueMeta = tryRequire("vue/package.json", root);
++  const vueMeta = tryRequire("vue3/package.json", root);
+   if (vueMeta && vueMeta.version.split(".")[0] >= 3) {
+-    return tryRequire("vue/compiler-sfc", root);
++    return tryRequire("vue3/compiler-sfc", root);
+   }
+ }
+ const _require = node_module.createRequire((typeof document === 'undefined' ? require('u' + 'rl').pathToFileURL(__filename).href : (document.currentScript && document.currentScript.src || new URL('index.cjs', document.baseURI).href)));

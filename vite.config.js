@@ -9,6 +9,7 @@ function fromPascalcaseToKebabcase(str) {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  envPrefix: 'VUE_',
   plugins: [
     {
       name: 'dummy-index-html',

@@ -41,10 +41,12 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### TODOs
 
-- Build support
+- Better build support
 - Peer dependency resolutions for Vue 3-only packages.
   - Maybe we need a `package.json` in the `vue3` directory to fully resolve this issue? That would be a little bit hacky to me, but makes sense.
-- Test whether style injection works correctly in Vue 3 components.
+- Document child component style-injection in Vue 3 components. It should work for basic cases, but may need https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/sub-style/README.md for more complex cases and to avoid surprises.
+- Extract the configuration into a Vue CLI plugin and a Vite plugin
 - ESLint rules to enforce the importing convention
 - A guide to re-setup the lint process without `@vue/cli-plugin-eslint`
 - TypeScript support
+- A more comprehensive example, e.g. integrate a page from https://github.com/vbenjs/vue-vben-admin into https://github.com/PanJiaChen/vue-element-admin
